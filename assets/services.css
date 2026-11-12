@@ -22,8 +22,72 @@
   padding-block: clamp(42px, 6vw, 78px);
 }
 
-#service-overview, #s1, #s2, #s3, #s4, #pricing, #compare {
-  scroll-margin-top: 96px;
+body {
+  overflow-x: clip;
+}
+
+.service-section-nav {
+  position: sticky;
+  inset: var(--service-nav-top, 84px) auto auto;
+  z-index: 90;
+  background: rgba(250, 252, 255, .95);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-block: 1px solid #dfe7f1;
+  transition: none;
+}
+
+.service-section-links {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(14px, 3vw, 34px);
+}
+
+.service-section-links a {
+  display: grid;
+  place-items: center;
+  position: relative;
+  min-height: 48px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.service-section-links a:hover,
+.service-section-links a[aria-current] {
+  color: #2458a8;
+}
+
+.service-section-links a[aria-current]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: #2458a8;
+}
+
+#service-overview, #s1, #s2, #s3, #s4, #pricing, #compare, #promise, #faq {
+  scroll-margin-top: calc(var(--service-nav-top, 84px) + var(--service-nav-height, 50px) + 12px);
+}
+
+@media (max-width: 600px) {
+  .service-section-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    padding-inline: 14px;
+  }
+
+  .service-section-links a {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .service-section-links a[aria-current]::after {
+    inset-inline: 8px;
+  }
 }
 
 .offer-heading {

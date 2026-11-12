@@ -11,7 +11,6 @@
     --r:22px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{font-family:var(--sans);background:var(--surface);color:var(--ink);line-height:1.9;font-size:16px;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
   ::selection{background:rgba(47,107,255,.16)}
   a{color:inherit;text-decoration:none}
@@ -225,9 +224,9 @@
 
   .platform-tabs {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 4px;
-    width: min(100%, 620px);
+    width: min(100%, 780px);
     padding: 4px;
     border: 1px solid #dce6f3;
     border-radius: 12px;
@@ -354,14 +353,16 @@
     object-fit: contain;
   }
 
+  .platform-list img[src$="amazon-business.png"] {width: 86px}
+
   @media (max-width: 600px) {
+    .platform-tabs {grid-template-columns: repeat(3, minmax(0, 1fr))}
     .platform-group {padding: 16px 10px}
     .platform-list {grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 6px}
     .platform-list li {font-size: 12px}
   }
 
   @media (max-width: 420px) {
-    .platform-tabs {grid-template-columns: repeat(2, minmax(0, 1fr))}
     .platform-list {grid-template-columns: repeat(3, minmax(0, 1fr))}
   }
 
@@ -662,6 +663,18 @@
     height: auto;
     aspect-ratio: 3 / 2;
     object-fit: cover;
+  }
+
+
+  @media (prefers-reduced-motion: no-preference) {
+    .work-preview img.is-entering {
+      animation: work-image-in 320ms cubic-bezier(.22,.7,.2,1);
+    }
+  }
+
+  @keyframes work-image-in {
+    from {opacity: .72; transform: translateY(8px)}
+    to {opacity: 1; transform: translateY(0)}
   }
 
   .work-preview:hover {
@@ -1153,7 +1166,6 @@
 
   /* ========== 精修层：质感 · 交互 · 可用性 ========== */
   :root{--ease:cubic-bezier(.22,.7,.2,1)}
-  #progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:120;background:linear-gradient(90deg,#2f6bff,#38b4c6);box-shadow:0 0 12px rgba(47,107,255,.55);transition:width .08s linear}
   .nav-links a.active,.nav-links a.current{color:var(--blue)}
   .nav-links a.active::after,.nav-links a.current::after{width:100%}
   .nav-links .m-only{display:none}
