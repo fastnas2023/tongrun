@@ -1,0 +1,215 @@
+.offer-hero {
+  padding: clamp(112px, 12vw, 166px) 0 clamp(42px, 6vw, 82px);
+}
+
+.offer-hero h1 {
+  margin: 12px 0;
+}
+
+.offer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.offer-actions .btn {
+  min-height: 46px;
+  padding-inline: 18px;
+}
+
+.offer-section {
+  padding-block: clamp(42px, 6vw, 78px);
+}
+
+#service-overview, #s1, #s2, #s3, #s4, #pricing, #compare {
+  scroll-margin-top: 96px;
+}
+
+.offer-heading {
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+
+.offer-heading h2 {
+  color: var(--ink);
+  font-size: clamp(26px, 3.3vw, 42px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.offer-heading p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.offer-grid, .package-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  align-items: start;
+}
+
+.offer-card, .package-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: clamp(18px, 2.8vw, 32px);
+  border: 1px solid #dce6f4;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.offer-card h3, .package-card h3 {
+  color: var(--ink);
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.4;
+}
+
+.offer-summary, .offer-audience, .package-audience {
+  margin-top: 10px;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.offer-audience strong, .package-audience strong {
+  margin-right: 4px;
+  color: var(--ink);
+}
+
+.offer-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.offer-price strong {
+  color: #2458d8;
+  font-size: 19px;
+}
+
+.offer-deliverables, .package-includes {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.offer-deliverables h4, .package-includes h4 {
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.offer-deliverables p, .offer-details ul, .package-includes ul {
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.offer-details {
+  margin-top: 10px;
+}
+
+.offer-details summary {
+  display: list-item;
+  width: fit-content;
+  min-height: 44px;
+  padding: 9px 0;
+  color: #2458d8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.offer-details ul, .package-includes ul {
+  padding-left: 19px;
+}
+
+.offer-details li + li, .package-includes li + li {
+  margin-top: 5px;
+}
+
+.package-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.package-card h3 span {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  margin-right: 3px;
+  place-items: center;
+  border-radius: 6px;
+  background: #eef4ff;
+  color: #2458d8;
+  font: 700 15px "DM Sans", var(--sans);
+  vertical-align: 2px;
+}
+
+.package-price {
+  margin-top: 14px;
+  color: var(--ink);
+  font-size: clamp(26px, 2.9vw, 36px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.package-unit {
+  margin-top: 4px;
+  color: #2458d8;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.package-audience {
+  min-height: 3.3em;
+}
+
+.package-note {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.package-note a {
+  color: #2458d8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.offer-next {
+  text-align: left;
+}
+
+.offer-next p {
+  max-width: 42em;
+}
+
+.offer-details summary:focus-visible, .package-note a:focus-visible {
+  outline: 2px solid #2458d8;
+  outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .package-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .package-audience {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .offer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
