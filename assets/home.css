@@ -116,18 +116,13 @@
 
   .hero-video-controls {
     position: absolute;
-    right: calc(max(0px, (100% - 1600px) / 2) + clamp(32px, 4.2vw, 72px));
-    bottom: clamp(30px, 4.6svh, 46px);
+    left: 76%;
+    bottom: clamp(26px, 4.2svh, 42px);
     display: flex;
     align-items: center;
-    padding: 2px 3px;
-    border: 1px solid rgba(255, 255, 255, .76);
-    border-radius: 999px;
-    background: linear-gradient(155deg, rgba(255, 255, 255, .87), rgba(223, 235, 252, .62));
-    -webkit-backdrop-filter: blur(16px) saturate(1.35);
-    backdrop-filter: blur(16px) saturate(1.35);
-    box-shadow: inset 0 1px 1px #fff, inset 0 -1px 2px #f2f7ff80, 0 5px 20px #10244226;
-    color: #152b49;
+    gap: 13px;
+    transform: translateX(-50%);
+    color: #fff;
   }
 
   .hero-video-options {display: flex}
@@ -135,65 +130,74 @@
   .hero-video-controls button {
     display: grid;
     place-items: center;
-    min-width: 32px;
+    min-width: 26px;
     min-height: 44px;
     padding: 0;
     border: 0;
-    border-radius: 999px;
+    border-radius: 50%;
     background: transparent;
     color: inherit;
     cursor: pointer;
   }
 
-  .hero-video-controls button:hover {background: rgba(255, 255, 255, .5)}
-
-  .hero-video-options::after {
-    content: "";
-    align-self: center;
-    width: 1px;
-    height: 17px;
-    background: rgba(21, 43, 73, .19);
-  }
-
   .hero-video-options button::before {
     content: "";
-    width: 8px;
-    height: 8px;
-    border: 1px solid currentColor;
-    border-radius: 50%;
+    box-sizing: border-box;
+    width: 6px;
+    height: 6px;
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 999px;
+    background: rgba(17, 30, 48, .48);
+    box-shadow: 0 1px 4px #091322b3;
   }
+
+  .hero-video-options button:hover::before {background: rgba(255, 255, 255, .45)}
 
   .hero-video-options button[aria-pressed="true"]::before {
-    border-color: #2458a8;
-    background: #2458a8;
-    box-shadow: 0 1px 1px rgba(255, 255, 255, .72);
+    width: 14px;
+    background: #fff;
   }
 
-  .hero-video-controls .hero-video-toggle {min-width: 40px}
+  .hero-video-controls .hero-video-toggle {
+    width: 44px;
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-top-color: rgba(255, 255, 255, .65);
+    background: linear-gradient(150deg, rgba(53, 74, 102, .55), rgba(12, 24, 43, .64));
+    -webkit-backdrop-filter: blur(14px) saturate(1.3);
+    backdrop-filter: blur(14px) saturate(1.3);
+    box-shadow: inset 0 1px 0 #ffffff29, 0 3px 13px #07142640;
+  }
+
+  .hero-video-controls .hero-video-toggle:hover {
+    background-color: rgba(173, 206, 255, .23);
+  }
 
   .hero-video-toggle::before {
     content: "";
+    box-sizing: border-box;
     width: 0;
     height: 0;
+    margin-left: 2px;
     border-block: 5px solid transparent;
     border-left: 8px solid currentColor;
   }
 
   .hero-video-toggle.is-playing::before {
     width: 9px;
-    height: 11px;
+    height: 10px;
+    margin-left: 0;
     border-block: 0;
-    border-inline: 3px solid currentColor;
+    border-inline: 2px solid currentColor;
   }
 
   .hero-video-controls button:focus-visible {
-    outline: 2px solid #2458a8;
-    outline-offset: -2px;
+    outline: 2px solid #fff;
+    outline-offset: -3px;
   }
 
   @media (prefers-reduced-transparency: reduce) {
-    .hero-video-controls {
-      background: #edf4ff;
+    .hero-video-controls .hero-video-toggle {
+      background: #263955;
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
     }
