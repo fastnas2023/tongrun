@@ -277,3 +277,19 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+@media (max-width: 760px) {
+  html:has(.service-section-nav) {scroll-behavior: auto}
+
+  .service-main-nav-hidden #nav {
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: none;
+  }
+
+  .service-main-nav-hidden .service-section-nav {top: 0}
+
+  .service-main-nav-hidden :is(#service-overview, #s1, #s2, #s3, #s4, #pricing, #compare, #promise, #faq) {
+    scroll-margin-top: calc(var(--service-nav-height, 50px) + 12px);
+  }
+}

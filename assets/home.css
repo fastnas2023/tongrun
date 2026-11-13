@@ -64,7 +64,7 @@
     text-wrap: balance;
   }
 
-  .home-hero h1 span {
+  .home-hero h1 span:last-child {
     display: block;
     color: #2258d4;
   }
@@ -110,7 +110,7 @@
   .home-hero::before {
     content: "";
     z-index: -1;
-    background: linear-gradient(90deg, rgba(243,246,250,.95) 0%, rgba(243,246,250,.90) 31%, rgba(243,246,250,.78) 48%, rgba(243,246,250,0) 78%);
+    background: linear-gradient(90deg, rgba(243,246,250,.76) 0%, rgba(243,246,250,.72) 31%, rgba(243,246,250,.624) 48%, rgba(243,246,250,0) 78%);
   }
 
   .hero-video-controls {
@@ -331,6 +331,28 @@
   .platform-button:hover,
   .platform-button:focus-visible {background: #edf3ff; color: #1e4db7}
   .platform-button:focus-visible {outline: 2px solid #2458d8; outline-offset: 2px}
+
+  .platform-inline {
+    display: grid;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-top: 1px solid var(--line-2);
+    color: var(--ink-2);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .platform-inline[hidden] {display: none}
+
+  .platform-inline-copy {
+    grid-area: 1 / 1;
+    visibility: hidden;
+    overflow-wrap: anywhere;
+  }
+
+  .platform-inline-copy.is-selected {visibility: visible}
+  .platform-inline-copy strong {display: block; color: var(--ink)}
+  .platform-button[aria-pressed="true"] {background: #eaf1ff; color: #1e4db7}
 
   .platform-tooltip {
     position: fixed;
@@ -1129,7 +1151,7 @@
     .hero-grid {padding-inline: clamp(22px, 4.2vw, 40px)}
     .hero-copy {width: 100%}
     .home-hero h1 {font-size: clamp(34px, 6.2vw, 50px)}
-    .home-hero h1 span {color: #9dbfff}
+    .home-hero h1 span:last-child {color: #9dbfff}
     .hero-sub {margin: 16px 0 20px; color: #dae5f6; line-height: 1.7}
     .home-hero .btn {min-height: 46px; padding-inline: 16px; font-size: 14px}
     .hero-work {
