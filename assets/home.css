@@ -110,7 +110,7 @@
   .home-hero::before {
     content: "";
     z-index: -1;
-    background: linear-gradient(90deg, rgba(243,246,250,.76) 0%, rgba(243,246,250,.72) 31%, rgba(243,246,250,.624) 48%, rgba(243,246,250,0) 78%);
+    background: linear-gradient(90deg, rgba(248,250,253,.91) 0%, rgba(248,250,253,.84) 26%, rgba(248,250,253,.67) 40%, rgba(248,250,253,.36) 54%, rgba(248,250,253,.11) 66%, rgba(248,250,253,0) 79%);
   }
 
   .hero-video-controls {
