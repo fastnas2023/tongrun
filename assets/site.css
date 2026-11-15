@@ -290,3 +290,30 @@ footer{background:#101a2c;color:#94a2b6;padding:64px 0 34px;font-size:13px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;transition-duration:.01s!important}}
 
 #report{scroll-margin-top:124px}
+
+.about-delivery {padding-block: clamp(48px, 7vw, 90px)}
+.about-delivery .sec-head {margin-bottom: 24px}
+.about-roles, .about-acceptance {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.about-roles > div, .about-acceptance > li {
+  padding: clamp(16px, 3vw, 26px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.about-roles dt, .about-acceptance h3 {font-size: 18px; font-weight: 700}
+.about-roles small {display: block; margin-top: 2px; color: var(--blue); font-size: 14px}
+.about-roles dd, .about-acceptance p, .about-brand-note {
+  margin-top: 8px;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.about-brand-note {margin-top: 20px}
+.about-acceptance {grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none}
+@media (max-width: 640px) {
+  .about-roles, .about-acceptance {grid-template-columns: minmax(0, 1fr)}
+}

@@ -965,6 +965,10 @@
   }
 
   .team-roles dt {font-weight: 700}
+  .team-roles dt small {display: block; color: var(--blue); font-size: 13px}
+  @media (max-width: 480px) {
+    .team-roles > div {grid-template-columns: minmax(0, 1fr); gap: 4px}
+  }
   .team-roles dd {color: var(--ink-2)}
 
   .team-figure {
