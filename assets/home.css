@@ -733,6 +733,20 @@
     line-height: 1.7;
   }
 
+  .work-more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 8px;
+    color: #2458d8;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .work-more:hover {text-decoration: underline}
+
+  #works .work-feature {padding-bottom: 0; border-bottom: 0}
+
   .work-link {
     position: absolute;
     right: 10px;
