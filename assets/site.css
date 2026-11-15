@@ -289,4 +289,4 @@ footer{background:#101a2c;color:#94a2b6;padding:64px 0 34px;font-size:13px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;transition-duration:.01s!important}}
 
-#report{scroll-margin-top:100px}
+#report{scroll-margin-top:124px}
