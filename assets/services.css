@@ -353,3 +353,55 @@ body {
 @media (max-width: 760px) {
   .service-main-nav-hidden .package-card h3[id] { scroll-margin-top: calc(var(--service-nav-height, 50px) + 12px); }
 }
+
+#prepare {
+  scroll-margin-top: calc(var(--service-nav-top, 84px) + var(--service-nav-height, 50px) + 12px);
+}
+
+.package-prepare { align-self: start; margin-top: auto; min-height: 44px; }
+
+.prepare-panel {
+  max-width: 760px;
+  padding: clamp(16px, 4vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.prepare-fields, .prepare-field-grid { display: grid; gap: 14px; }
+.prepare-fields { gap: 22px; }
+.prepare-field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.prepare-wide { grid-column: 1 / -1; }
+.prepare-field { display: block; min-width: 0; color: var(--ink); font-weight: 600; }
+.prepare-field[hidden] { display: none; }
+.prepare-field small, .prepare-fields legend small { color: var(--ink-2); font-weight: 400; }
+.prepare-fields fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.prepare-fields legend { margin-bottom: 10px; padding: 0; font-size: 17px; font-weight: 700; }
+
+.prepare-field :is(input, select, textarea) {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #a8b9d1;
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.prepare-field textarea { resize: vertical; }
+.prepare-field :is(input, select, textarea):focus-visible { outline: 2px solid #2458a8; outline-offset: 2px; }
+.prepare-tier-guide { margin: 0 0 12px; padding-inline-start: 1.25em; color: var(--ink-2); }
+.prepare-tier-guide li + li { margin-top: 4px; }
+.prepare-fields .offer-actions { margin-top: 0; }
+.prepare-status { color: var(--ink-2); margin-top: -14px; }
+
+@media (max-width: 760px) {
+  .service-main-nav-hidden #prepare { scroll-margin-top: calc(var(--service-nav-height, 50px) + 12px); }
+  .prepare-field-grid { grid-template-columns: minmax(0, 1fr); }
+  .prepare-fields .offer-actions { display: grid; }
+}
