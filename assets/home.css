@@ -1240,3 +1240,19 @@
     .logo-text{font-size:15px}
     #toTop{right:16px;bottom:16px}
   }
+
+.hero-all-cases { display: none; }
+@media (max-width: 860px) {
+  .hero-all-cases {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    margin-top: 4px;
+    color: #dceaff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}

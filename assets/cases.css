@@ -144,3 +144,5 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.case-project-link { padding-bottom: var(--case-inset); }
