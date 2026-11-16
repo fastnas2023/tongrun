@@ -1,0 +1,37 @@
+.reading-header {padding: 116px 0 24px; background: var(--bg)}
+.reading-header h1 {margin: 8px 0; font-size: clamp(29px, 4vw, 48px); line-height: 1.26}
+.reading-header p {max-width: 44em; color: var(--ink-2); font-size: 16px; line-height: 1.65}
+.reading-list, .reading-planned, .reading-content {padding-block: clamp(24px, 4vw, 52px)}
+.reading-card, .reading-next {
+  display: block;
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.reading-card:hover {border-color: var(--blue)}
+.reading-card h2, .reading-next h2, .reading-planned h2 {font-size: clamp(21px, 2.5vw, 28px); line-height: 1.4}
+.reading-card p, .reading-next p {margin-block: 8px; color: var(--ink-2); line-height: 1.65}
+.reading-topic, .reading-meta, .reading-header p.reading-meta {color: var(--blue); font-size: 14px}
+.reading-planned ul {margin: 12px 0 0 1.2em; color: var(--ink-2)}
+.reading-prose {line-height: 1.75; overflow-wrap: anywhere}
+.reading-prose h2[id] {scroll-margin-top: 124px}
+.reading-toc {position: static; padding: 14px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg)}
+.reading-toc h2 {margin: 0; font-size: 18px}
+.reading-toc ul {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 4px 0 0; list-style: none}
+.reading-toc li {margin: 0}
+.reading-toc a {display: inline-flex; align-items: center; min-height: 44px; color: var(--blue)}
+.reading-toc a:hover, .reading-back:hover {text-decoration: underline; text-underline-offset: 3px}
+.reading-check {display: grid; gap: 8px; margin-bottom: 24px}
+.reading-check dt, .reading-scores dt {color: var(--ink); font-weight: 700}
+.reading-check dd, .reading-scores dd {margin: 0}
+.reading-scores {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 16px 0 24px}
+.reading-scores > div {padding: 12px 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 8px}
+.reading-next {max-width: 760px; margin: 28px auto 0}
+.reading-actions {display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px}
+.reading-actions a, .reading-back {min-height: 44px}
+.reading-back {display: inline-flex; align-items: center; margin-top: 8px; color: var(--blue)}
+@media (max-width: 600px) {
+  .reading-scores {grid-template-columns: minmax(0, 1fr)}
+  .reading-actions {display: grid}
+}
