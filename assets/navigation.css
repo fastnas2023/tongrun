@@ -137,16 +137,37 @@
 }
 
 @media (max-width: 1080px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  .nav-links:not(.open) {
+    display: none !important;
+  }
+
   .nav-links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    flex-direction: column;
     align-items: stretch;
     gap: 0;
-    visibility: hidden;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 10px 24px 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+    border-bottom: 1px solid var(--line);
     max-height: calc(100dvh - 72px);
     overflow-y: auto;
   }
 
   .nav-links.open {
-    visibility: visible;
+    display: flex !important;
+    background: #ffffff !important;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.16) !important;
   }
 
   .nav-group summary {
