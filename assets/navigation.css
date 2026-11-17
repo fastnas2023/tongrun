@@ -1,18 +1,42 @@
 #nav {
-  background: linear-gradient(105deg, #fff 0%, #f5f8ff 58%, #eaf1ff 100%);
-  border-bottom-color: #d5e1f3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.84);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #nav.scrolled {
-  border-bottom-color: #d5e1f3;
-  box-shadow: 0 4px 18px rgba(23, 48, 87, .09);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(203, 213, 225, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 .nav-links {
+  display: flex;
   align-items: center;
-  color: #1e3150;
+  color: #1e293b;
   font-weight: 500;
-  gap: clamp(20px, 2.5vw, 38px);
+  font-size: 14px;
+  gap: clamp(18px, 2.3vw, 36px);
+}
+
+.nav-links a {
+  position: relative;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover,
+.nav-links a.current {
+  color: #1d4ed8;
 }
 
 .nav-group {
@@ -22,9 +46,11 @@
 .nav-group summary {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   list-style: none;
   cursor: pointer;
+  padding: 6px 0;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-group summary::-webkit-details-marker {
@@ -33,39 +59,66 @@
 
 .nav-group summary::after {
   content: "";
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border: solid currentColor;
   border-width: 0 1.5px 1.5px 0;
   transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.7;
 }
 
 .nav-group[open] summary::after {
   transform: translateY(2px) rotate(225deg);
+  opacity: 1;
 }
 
 .nav-group summary:hover,
 .nav-group:has(a.current) summary {
-  color: var(--blue);
+  color: #1d4ed8;
 }
 
 .nav-submenu {
   position: absolute;
-  top: calc(100% + 16px);
+  top: calc(100% + 12px);
   left: -14px;
-  min-width: 166px;
-  padding: 6px;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: var(--sh-s);
+  min-width: 180px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.98);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 14px;
+  box-shadow: 0 20px 42px -12px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  animation: navSubmenuIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top left;
+}
+
+@keyframes navSubmenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .nav-links .nav-submenu a {
-  display: block;
-  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-links .nav-submenu a::after {
@@ -74,7 +127,9 @@
 
 .nav-submenu a:hover,
 .nav-submenu a.current {
-  background: var(--blue-soft);
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding-left: 15px;
 }
 
 #s1, #s2, #s3, #pricing, #founder, #process {
@@ -96,9 +151,9 @@
 
   .nav-group summary {
     justify-content: space-between;
-    min-height: 46px;
+    min-height: 48px;
     border-bottom: 1px solid var(--line);
-    font-size: 14px;
+    font-size: 14.5px;
   }
 
   .nav-submenu {
@@ -107,10 +162,12 @@
     padding: 0 0 0 12px;
     border: 0;
     box-shadow: none;
+    background: transparent;
+    animation: none;
   }
 
   .nav-links .nav-submenu a {
-    padding: 12px;
+    padding: 11px 12px;
   }
 }
 
@@ -122,8 +179,10 @@
   padding: 8px 14px;
   border-radius: 6px;
   background: #fff;
-  color: #1745aa;
+  color: #1d4ed8;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
   transform: translateY(-160%);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .skip-link:focus {
@@ -131,12 +190,12 @@
 }
 
 :where(a, button, summary, input, select, textarea):focus-visible {
-  outline: 2px solid #1745aa;
+  outline: 2px solid #1d4ed8;
   outline-offset: 3px;
 }
 
 footer :where(a, button):focus-visible {
-  outline-color: #adc8ff;
+  outline-color: #60a5fa;
 }
 
 #main-content {
@@ -146,6 +205,9 @@ footer :where(a, button):focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .nav-submenu {
+    animation: none;
   }
 }
 
@@ -164,7 +226,7 @@ footer :where(a, button):focus-visible {
 }
 
 footer .logo-text small {
-  color: #a4b0c0;
+  color: #94a3b8;
 }
 
 #nav .logo {

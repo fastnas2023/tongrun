@@ -1,13 +1,14 @@
 .site-footer {
-  padding: clamp(36px, 5vw, 64px) 0 24px;
-  background: #101a2c;
-  color: #bcc8da;
+  padding: clamp(48px, 6vw, 76px) 0 32px;
+  background: #080d19;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .site-footer-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) repeat(2, minmax(0, 1fr));
-  gap: clamp(22px, 4vw, 60px);
+  gap: clamp(24px, 4vw, 64px);
 }
 
 .site-footer .footer-brand {
@@ -18,60 +19,72 @@
   color: #fff;
 }
 
+.site-footer .logo-mark {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+}
+
 .site-footer .logo-text small {
-  color: #bcc8da;
+  color: #64748b;
 }
 
 .site-footer .footer-description {
-  max-width: 23em;
-  margin-top: 12px;
+  max-width: 24em;
+  margin-top: 14px;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.75;
+  color: #94a3b8;
 }
 
 .site-footer h2 {
-  margin-bottom: 6px;
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.45;
+  margin-bottom: 12px;
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .site-footer ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .site-footer li a {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 38px;
   align-items: center;
-  color: #d0daea;
+  color: #cbd5e1;
   font-size: 14px;
   line-height: 1.4;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .site-footer li a:hover {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: #60a5fa;
+  transform: translateX(4px);
 }
 
 .site-footer a:focus-visible {
-  outline: 2px solid #adc8ff;
+  outline: 2px solid #60a5fa;
   outline-offset: 3px;
 }
 
 .site-footer-copy {
-  margin-top: 24px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, .15);
-  color: #aebbd0;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #64748b;
   font-size: 13px;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 720px) {
   .site-footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px 14px;
+    gap: 24px 16px;
   }
 
   .site-footer-grid > :first-child {
@@ -79,6 +92,6 @@
   }
 
   .site-footer li a {
-    min-height: 44px;
+    min-height: 42px;
   }
 }
